@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import './App.css';
 import {handleInitialData} from './store/actions/shared';
+import Home from './Components/Home';
 
 class App extends Component{
 
@@ -13,7 +14,7 @@ class App extends Component{
   render(){
     return (
       <div>
-        Hello world
+        <Home authUser={this.props.authUser}/>
       </div>
     );
   }
@@ -21,7 +22,7 @@ class App extends Component{
 
 const mapStateToProps = ({authUser}) => {
   return{
-    loading: authUser === null
+    authUser: authUser
   }
 }
 
