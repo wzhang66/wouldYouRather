@@ -5,6 +5,7 @@ import './App.css';
 import {handleInitialData} from './store/actions/shared';
 import Home from './Components/Home/Home';
 import Leaderboard from './Components/Leaderboard/Leaderboard';
+import NewQuestion from './Components/NewQuestion/NewQuestion';
 
 class App extends Component{
 
@@ -16,7 +17,8 @@ class App extends Component{
     return (
       <div>
         {/* <Home /> */}
-        <Leaderboard />
+        {/* <Leaderboard /> */}
+        <NewQuestion authUser={this.props.authUser}/>
       </div>
     );
   }
