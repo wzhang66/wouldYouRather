@@ -35,7 +35,12 @@ class Home extends Component {
                     {questionIds.map(questionId=>{
                         let questionreplay = null;
                         if (authAnswer.includes(questionId) === this.state.answerState) {
-                            questionreplay = (<li key={questionId}><QuestionCard questionId={questionId}/></li>)
+                            questionreplay = (
+                                <li key={questionId}>
+                                    <QuestionCard 
+                                        questionId={questionId}
+                                        answered={this.state.answerState}/>
+                                </li>)
                         }
                         
                         return questionreplay
