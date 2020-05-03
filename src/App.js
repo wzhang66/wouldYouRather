@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 
 import './App.css';
 import {handleInitialData} from './store/actions/shared';
-import Home from './Components/Home';
+import Home from './Components/Home/Home';
+import Leaderboard from './Components/Leaderboard/Leaderboard';
 
 class App extends Component{
 
@@ -14,7 +15,8 @@ class App extends Component{
   render(){
     return (
       <div>
-        <Home authUser={this.props.authUser}/>
+        {/* <Home /> */}
+        <Leaderboard />
       </div>
     );
   }

@@ -20,9 +20,10 @@ class Home extends Component {
         })
     }
     
+    
     render(){
-        const {authUser, questions} = this.props
-
+        const {authInfo, questionIds} = this.props;
+        let authAnswer =  authInfo ? Object.keys(authInfo.answers) : []
         return(
             <div>
                 <h3>Questions</h3>
@@ -31,11 +32,9 @@ class Home extends Component {
                     <button onClick={this.showAnswered}>Answered questions</button>
                 </div>
                 <ul>
-                    {this.props.questionIds.map(questionId=>{
+                    {questionIds.map(questionId=>{
                         let questionreplay = null;
-                        const {optionOne,optionTwo} = questions[questionId]
-                        const voteList = (optionOne.votes ? optionOne.votes : []).concat(optionTwo.votes ? optionTwo.votes: []);
-                        if (voteList.includes(authUser) === this.state.answerState) {
+                        if (authAnswer.includes(questionId) === this.state.answerState) {
                             questionreplay = (<li key={questionId}><QuestionCard questionId={questionId}/></li>)
                         }
                         
@@ -48,12 +47,11 @@ class Home extends Component {
     }
 }
 
-const mapStateToProps = ({questions,authUser}) => {
+const mapStateToProps = ({questions,authUser,users}) => {
     return {
         questionIds: Object.keys(questions)
             .sort((a,b)=>questions[b].timestamp-questions[a].timestamp),
-        questions,
-        authUser
+        authInfo: users[authUser]
     }
 }
 
