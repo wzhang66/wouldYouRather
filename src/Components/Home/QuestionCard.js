@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class QuestionCard extends Component {
     render(){
@@ -9,7 +10,7 @@ class QuestionCard extends Component {
             name,
             avatarURL
         } = questionUser;
-        const {optionOne} = question;
+        const {id,optionOne} = question;
 
         return(
             <div>
@@ -20,7 +21,7 @@ class QuestionCard extends Component {
                 <h4>Would you rather</h4>
                 <p>{optionOne.text}</p> 
                 {/* <p>{this.props.answered ? 'answered' : 'not answered'}</p> */}
-                <button>View pull</button>               
+                <Link to={`/question/${id}`} >View pull</Link>               
             </div>
         )
     }
