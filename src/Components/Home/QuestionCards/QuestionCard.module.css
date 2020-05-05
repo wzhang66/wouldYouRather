@@ -1,0 +1,35 @@
+.Container {
+    border: 1px solid #969696;
+    border-radius: 5px;
+}
+.Header {
+    background-color: #F9F8F9;
+    width: 100%;
+    margin: 0;
+    padding: 0 10%;
+    font-weight: 700;
+}
+
+.Avatar {    
+    width: 100%;
+    align-content: center;
+    margin: 10%;
+    text-align: center;
+}
+
+.Button {
+    width: 100%;
+    color: #57BEA8;
+    border: 1px solid #57BEA8;;
+    border-radius: 5px;
+    background-color: #FFF;
+}
+
+.Button:focus {outline:0;}
+
+
+.Content {
+    padding: 10px 15px 20px 15px;
+    border-left: 1px solid #E5E4E5;
+    margin-bottom: 20px;
+}

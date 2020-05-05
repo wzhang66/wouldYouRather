@@ -1,0 +1,40 @@
+.Container {
+    border: 1px solid #969696;
+    margin: 0% 25%;
+}
+
+.Avatar {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+}
+
+.Content{
+    margin:20px 0;
+    padding-left: 10px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.Result{
+    position: absolute;
+    right: 20px;
+}
+
+.Score {
+    margin-top: 20px;   
+    text-align: center;
+}
+.TotalScore {
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    background-color: chartreuse;
+    margin: auto;
+}

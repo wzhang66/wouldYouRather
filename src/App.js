@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {handleInitialData} from './store/actions/shared';
 import Home from './Components/Home/Home';
 import Leaderboard from './Components/Leaderboard/Leaderboard';

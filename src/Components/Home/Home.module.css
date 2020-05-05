@@ -1,0 +1,31 @@
+.Container {
+    border: 1px solid black;
+    margin: 0% 25% 5% 25%;
+}
+
+.ShowQuestions{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.ActiveButton {
+    width: 100%;
+    background-color: #F1F0F1;
+    border: none;
+    color: #57BEAA;
+}
+.ActiveButton:focus {
+    outline:0;
+}
+
+.InactiveButton {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #F1F0F1;
+    color: #000;
+}
+.InactiveButton:focus {
+    outline:0;
+}

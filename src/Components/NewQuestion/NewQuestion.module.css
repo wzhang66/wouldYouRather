@@ -1,0 +1,72 @@
+.Container {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0% 25% 5% 25%;
+}
+
+.Header {
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.Content {
+    padding: 15px;
+}
+.Title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.InputElement {
+    width: 100%;
+    padding: 2px 4px;
+}
+
+.OrSeperator {
+    margin: 10px 0 ;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.OrSeperator > span {
+    position: relative;
+    display: inline-block;
+}
+
+.OrSeperator > span:before,
+.OrSeperator > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: #A8A8A8;
+}
+
+.OrSeperator > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.OrSeperator > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+.Submit {
+    width: 100%;
+    background-color: #57BEAA;
+    color: #FFF;
+    border-radius: 5px;
+    margin: 20px 0;
+    border: none;
+}
+
+.Submit:focus {outline: 0;}
+
+.Submit:hover {
+    background-color: #48A08C;
+    cursor: pointer;
+}

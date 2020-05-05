@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
-import User from './User';
+import User from './User/User';
 
 class Leaderboard extends Component {
     render(){
