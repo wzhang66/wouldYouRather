@@ -6,7 +6,7 @@ import {showLoading,hideLoading} from 'react-redux-loading-bar';
 
 
 // fake Id for the testing first
-const AUTHED_ID = "sarahedo";
+const AUTHED_ID = '';
 
 export const handleInitialData = () => {
     return(dispatch) => {

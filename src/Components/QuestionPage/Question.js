@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
+import classes from './Question.module.css';
 
 import {handleSaveAnswer} from '../../store/actions/questions';
 
@@ -26,35 +27,54 @@ class Question extends Component {
         const {optionOne,optionTwo} = question;
 
         return(
-            <div>
-                <h3>{name} asks</h3>
-                <img 
-                src={avatarURL}
-                alt={`Avatar of ${name}`}/>
-                <h4>Would you rather...</h4>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                    <input 
-                        type="radio"
-                        value="optionOne"
-                        name="answer"
-                        onChange={(e)=>this.handleSelect(e)}/>
-                    {optionOne.text}
-                    </label>
-                    <label>
-                    <input 
-                        type="radio"
-                        value="optionTwo"
-                        name="answer"
-                        onChange={(e)=>this.handleSelect(e)}/>
-                    {optionTwo.text}
-                    </label>
-                    <button 
-                        type="submit"
-                        disabled={this.state.answer.length===0}>
-                        Submit
-                    </button>
-                </form>
+            <div className={classes.Container}>
+                <div className={classes.Header}>
+                    <h3>{name} asks</h3>
+                </div>
+                <div className="row">
+                    <div className="col-sm-4" >
+                        <img 
+                        className={classes.Avatar}
+                        src={avatarURL}
+                        alt={`Avatar of ${name}`}/>
+                    </div>
+
+                    <div className="col-sm-8">
+                        <div className={classes.Content}>
+                            <h4>Would you rather...</h4>
+                            <form onSubmit={this.handleSubmit}>
+                                <label className={classes.Selection}>
+                                <input 
+                                    
+                                    type="radio"
+                                    value="optionOne"
+                                    name="answer"
+                                    onChange={(e)=>this.handleSelect(e)}/>
+                                    {optionOne.text}
+                                </label>
+                                <label className={classes.Selection}>
+                                <input 
+                                    
+                                    type="radio"
+                                    value="optionTwo"
+                                    name="answer"
+                                    onChange={(e)=>this.handleSelect(e)}/>
+                                    {optionTwo.text}
+                                </label>
+                                <button 
+                                    className={classes.Button}
+                                    type="submit"
+                                    disabled={this.state.answer.length===0}>
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
             </div>
         )
     }

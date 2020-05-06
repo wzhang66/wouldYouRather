@@ -1,0 +1,35 @@
+.Container {
+    border: 1px solid black;
+    margin: 0% 25% 5% 25%;
+    text-align: center;
+}
+
+.SelectUser{
+    width: 60%;
+    margin: 20px;
+    background-color: #FFF;
+}
+
+.Button {
+    width: 60%;
+    margin-bottom: 20px;
+    background-color: #57BEAA;
+    color: #FFF;
+    border-radius: 5px;
+    border: none;
+}
+
+.Button:focus {outline: 0;}
+.Button:hover {
+    background-color: #48A08C;
+    cursor: pointer;
+}
+
+.DisableButton {
+    width: 60%;
+    margin-bottom: 20px;
+    background-color: #56726C;
+    color: #FFF;
+    border-radius: 5px;
+    border: none;
+}

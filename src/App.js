@@ -11,6 +11,7 @@ import NewQuestion from './Components/NewQuestion/NewQuestion';
 import Nav from './Components/Nav/Nav';
 import QuestionPage from './Components/QuestionPage/QuestionPage';
 import LoadingBar from 'react-redux-loading-bar';
+import Login from './Components/Login/Login';
 
 class App extends Component{
 
@@ -19,6 +20,22 @@ class App extends Component{
   }
 
   render(){
+    const {authUser} = this.props;
+    let showContent = (
+      <div>
+        <Route path='/' component={Login}/>
+      </div>
+    );
+    if (authUser!==''){
+      showContent = (
+        <div>
+          <Route path='/' exact component={Home}/>
+          <Route path='/leaderboard' exact component={Leaderboard}/>
+          <Route path='/add' exact component={NewQuestion}/>
+          <Route path='/question/:id' component={QuestionPage}/>
+        </div>
+      )
+    }
     return (
       <Router>
         <LoadingBar />
@@ -26,12 +43,8 @@ class App extends Component{
         { this.props.loading === true 
           ? null 
           :
-          <div>
-          <Route path='/' exact component={Home}/>
-          <Route path='/Leaderboard' exact component={Leaderboard}/>
-          <Route path='/new' exact component={NewQuestion}/>
-          <Route path='/question/:id' component={QuestionPage}/>
-        </div>}
+          showContent
+          }
       </Router>
     );
   }
@@ -39,6 +52,7 @@ class App extends Component{
 
 const mapStateToProps = ({authUser}) => {
   return{
+    authUser,
     loading: authUser === null
   }
 }
