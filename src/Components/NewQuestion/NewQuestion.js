@@ -2,12 +2,15 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import { handleAddQuestion } from '../../store/actions/questions';
 
+
 import classes from './NewQuestion.module.css';
+import { Redirect } from 'react-router-dom';
 
 class NewQuestion extends Component {
     state = {
         optionOne:'',
-        optionTwo:''
+        optionTwo:'',
+        toHome: false
     }
 
     optionOneInput = (event) =>{
@@ -34,11 +37,15 @@ class NewQuestion extends Component {
         dispatch(handleAddQuestion(question));
         this.setState({
             optionOne:'',
-            optionTwo:''
+            optionTwo:'',
+            toHome: authUser ? true : false
         })
     }
 
     render(){
+        if (this.state.toHome) {
+            return <Redirect to='/' />
+        }
         return(
             <div className={classes.Container}>
                 <div className={classes.Header}>

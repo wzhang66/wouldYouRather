@@ -33,7 +33,7 @@ class QuestionCard extends Component {
                             <h4>Would you rather</h4>
                             <p>...{optionOne.text}...</p> 
                             {/* <p>{this.props.answered ? 'answered' : 'not answered'}</p> */}
-                            <Link  to={`/question/${id}`} ><button className={classes.Button}>View pull</button></Link>  
+                            <Link  to={`/questions/${id}`} ><button className={classes.Button}>View pull</button></Link>  
                         </div>
                         
                     </div>

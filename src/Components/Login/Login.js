@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 
 import {setAuthUser} from '../../store/actions/AuthUser'
 import classes from './Login.module.css';
-import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
     state={
@@ -19,8 +18,7 @@ class Login extends Component {
     submitHandler = (e) =>{
         e.preventDefault();
         const{dispatch} = this.props
-        dispatch(setAuthUser(this.state.user));
-        return <Redirect to="/" />;
+        dispatch(setAuthUser(this.state.user));        
     }
     
     render(){

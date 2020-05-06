@@ -31,7 +31,7 @@ class Result extends Component {
                                     {optionOne.text} {answer === 'optionOne' ? <span className={classes.Vote}>You voted!</span> : null}
                                 </div>
                                 <div>
-                                    {voteOneNum} of {voteOneNum+voteTwoNum} ({voteOnePercent}%) of people vote this
+                                    {voteOneNum} of {voteOneNum+voteTwoNum} ({voteOnePercent.toFixed(2)}%) of people vote this
                                 </div>
                             </div>
                             <div className={answer === 'optionTwo' ? classes.Selected : classes.Unselected}>
@@ -39,7 +39,7 @@ class Result extends Component {
                                     {optionTwo.text} {answer === 'optionTwo' ? <span className={classes.Vote}>You voted!</span> : null}
                                 </div>
                                 <div>
-                                    {voteTwoNum} of {voteOneNum+voteTwoNum} ({voteTwoPercent}%) of people vote this
+                                    {voteTwoNum} of {voteOneNum+voteTwoNum} ({voteTwoPercent.toFixed(2)}%) of people vote this
                                 </div>
                             </div>
                         </div>
